@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digidrobe - Add Clothing</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#70df20",
+                        "background-light": "#f7f8f6",
+                        "background-dark": "#182111",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#24301a",
+                        "text-main": "#131b0e",
+                        "text-muted": "#5e6e52",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark transition-colors duration-300">
+<div class="relative flex h-full min-h-screen w-full flex-col font-display overflow-x-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
+<!-- Top App Bar -->
+<header class="flex items-center p-6 pb-2 justify-between z-10">
+<button class="flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-text-main dark:text-white" style="font-size: 24px;">arrow_back</span>
+</button>
+<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12 lowercase">new find</h2>
+</header>
+<!-- Page Indicators -->
+<div class="flex w-full flex-row items-center justify-center gap-2 py-4">
+<div class="h-1.5 w-1.5 rounded-full bg-primary/30"></div>
+<div class="h-1.5 w-6 rounded-full bg-primary"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-primary/30"></div>
+</div>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col px-6">
+<!-- Hero Image / Preview Area -->
+<div class="relative flex-1 min-h-[320px] flex items-center justify-center py-6 group">
+<!-- Background decorative elements for depth -->
+<div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent rounded-[3rem] dark:from-primary/10"></div>
+<!-- The Clothing Item -->
+<div class="relative z-10 w-full max-w-[280px] aspect-[3/4] transition-transform duration-500 ease-out group-hover:scale-[1.02]">
+<!-- Using a div with bg image to simulate the item preview -->
+<div class="w-full h-full bg-center bg-contain bg-no-repeat drop-shadow-2xl filter" data-alt="isolated white graphic t-shirt floating in center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCsNl8cA2I6ODKJUKlv_gNvpRPmHmtyc9OsEde5xUV_DQzAzmMXAQl00fzF_xONpr0yzMq5fpoZ2UmSHRWcbon5Egfx__IBaqC8F7tq-FBgwin_A-DnFXxX0Jy4JZeW6qDvtZ5bYDuNLPcVHxgKLV22gwflcW9GDReix3RFSj39696LiQuj8GDeSUSv5ZT6wbiH4--7BXbjWsn2hF7TRc4sIfE6cRj6Ho00tutqBwRru9tCxP5ML7ogLYtBJuMiVS3AmPNlilnPpuYK');">
+</div>
+<!-- Retake/Edit Button Floating -->
+<button class="absolute -bottom-4 right-4 bg-surface-light dark:bg-surface-dark shadow-lg dark:shadow-black/20 text-text-main dark:text-white p-3 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-size: 20px;">crop_free</span>
+</button>
+</div>
+</div>
+<!-- Auto-Tags Section -->
+<div class="flex flex-col gap-4 py-6">
+<div class="flex items-center justify-between">
+<span class="text-text-muted dark:text-gray-400 text-xs font-semibold uppercase tracking-wider pl-1">AI Detected Tags</span>
+<button class="text-primary text-xs font-bold hover:underline">Edit all</button>
+</div>
+<div class="flex gap-3 flex-wrap">
+<!-- Tag 1 -->
+<div class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark shadow-sm border border-black/5 dark:border-white/5 pl-3 pr-4 transition-all hover:border-primary/50 cursor-pointer">
+<span class="material-symbols-outlined text-text-main dark:text-white" style="font-size: 18px;">checkroom</span>
+<p class="text-text-main dark:text-white text-sm font-medium leading-normal lowercase">graphic tee</p>
+</div>
+<!-- Tag 2 -->
+<div class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark shadow-sm border border-black/5 dark:border-white/5 pl-3 pr-4 transition-all hover:border-primary/50 cursor-pointer">
+<span class="material-symbols-outlined text-text-main dark:text-white" style="font-size: 18px;">texture</span>
+<p class="text-text-main dark:text-white text-sm font-medium leading-normal lowercase">cotton</p>
+</div>
+<!-- Tag 3 -->
+<div class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark shadow-sm border border-black/5 dark:border-white/5 pl-3 pr-4 transition-all hover:border-primary/50 cursor-pointer">
+<span class="material-symbols-outlined text-text-main dark:text-white" style="font-size: 18px;">wb_sunny</span>
+<p class="text-text-main dark:text-white text-sm font-medium leading-normal lowercase">summer</p>
+</div>
+<!-- Tag 4 -->
+<div class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark shadow-sm border border-black/5 dark:border-white/5 pl-3 pr-4 transition-all hover:border-primary/50 cursor-pointer">
+<span class="material-symbols-outlined text-text-main dark:text-white" style="font-size: 18px;">palette</span>
+<p class="text-text-main dark:text-white text-sm font-medium leading-normal lowercase">white</p>
+</div>
+<!-- Add Tag Button -->
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-1 rounded-full bg-transparent border border-dashed border-text-muted/40 hover:border-primary hover:bg-primary/5 dark:hover:bg-primary/10 pl-2 pr-3 transition-colors group">
+<span class="material-symbols-outlined text-text-muted dark:text-gray-400 group-hover:text-primary" style="font-size: 20px;">add</span>
+<p class="text-text-muted dark:text-gray-400 group-hover:text-primary text-sm font-medium leading-normal lowercase">tag</p>
+</button>
+</div>
+</div>
+<!-- Spacer -->
+<div class="flex-1"></div>
+<!-- Footer Action -->
+<div class="pb-8 pt-2">
+<button class="relative w-full overflow-hidden rounded-full h-14 bg-primary text-text-main shadow-lg shadow-primary/20 hover:shadow-primary/40 active:scale-[0.98] transition-all duration-200 group">
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out rounded-full"></div>
+<span class="relative z-10 text-base font-bold leading-normal tracking-tight lowercase flex items-center justify-center gap-2">
+                        add to wardrobe
+                        <span class="material-symbols-outlined" style="font-size: 20px;">arrow_forward</span>
+</span>
+</button>
+<p class="text-center text-xs text-text-muted dark:text-gray-500 mt-4 lowercase">Is the background clean? <a class="underline decoration-1 underline-offset-2" href="#">Fix it manually</a></p>
+</div>
+</main>
+</div>
+<script>
+        // Simple script to toggle dark mode for demonstration
+        // In a real app, this would be handled by system preference or user settings
+        const html = document.documentElement;
+        // html.classList.add('dark'); // Uncomment to test dark mode defaults
+    </script>
+</body></html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digidrobe - Today Screen</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4c99e6",
+              "background-light": "#f6f7f8",
+              "background-dark": "#111921",
+              "surface-light": "#ffffff",
+              "surface-dark": "#1e2936",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "1rem", 
+              "lg": "2rem", 
+              "xl": "3rem", 
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar hiding for cleaner UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display transition-colors duration-200 antialiased overflow-hidden">
+<div class="relative h-screen w-full max-w-md mx-auto flex flex-col overflow-hidden bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- Top Bar -->
+<header class="flex items-center justify-between px-6 pt-6 pb-2 z-10">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover bg-center shadow-sm border-2 border-white dark:border-gray-700" data-alt="User profile avatar abstract gradient" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGNmZxRt60NVhiqvA2LRcPU2pspFVIfaMqShJjN-OtNHp2jwr0JHeLObQmaHpLRdS9b8omhKV-NvTUA8zP7sme1XGFa37A6hQakRV1E50Aus_yM98aRZ1YFSSnz9EYCKjzS77HFzHWsNVdkbkNB2SB0KZ80MPo5Q3gLu61bt-NIvJyWSBcIcBmezFfDgqZcWJ9n7Dcw1g9e-uT8EmvLI0peWjS2kSKS9BwhImxU07KU4-2DU-SPXzdmGkzPhyvQLoR8WQ0xrrJrM-5');"></div>
+</div>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white dark:bg-surface-dark shadow-sm text-slate-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">settings</span>
+</button>
+</header>
+<!-- Main Scrollable Area -->
+<main class="flex-1 flex flex-col px-6 pb-28 overflow-y-auto no-scrollbar relative z-0">
+<!-- Greeting & Date -->
+<div class="mt-4 mb-6">
+<h1 class="text-[32px] font-bold tracking-tight text-slate-900 dark:text-white leading-tight">hey, rishabh</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium mt-1">Tue, 14 Oct</p>
+</div>
+<!-- Main Outfit Card -->
+<div class="flex-1 w-full bg-surface-light dark:bg-surface-dark rounded-[2.5rem] shadow-[0_20px_40px_-12px_rgba(0,0,0,0.08)] dark:shadow-none overflow-hidden flex flex-col relative group">
+<!-- Collage / Visuals -->
+<div class="flex-1 grid grid-cols-2 gap-1 p-1 bg-gray-100 dark:bg-gray-800">
+<!-- Item 1: Jacket/Top Layer (Large) -->
+<div class="col-span-2 h-48 bg-cover bg-center rounded-[2rem] rounded-b-lg relative overflow-hidden" data-alt="Beige minimalist trench coat on hanger" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQ37dsOOjXWmqf4Xo4-wTKJifHUpbI43t5eb59BJF2fQvYMlSKrPqkR3-tbwpgbGsuQu7tEJJj9k54dkFUL9uOoaPe82Z6ypdKQk0rhmwdCRf2vzAbPhHWO-7XTgFzuGezPtNYTVsgDXXIYy05YqURseFYpQgrm4NQ-CqOZyY-bIHJUVe412hN2vJBvtDx_2ud9SzE59Vc5RnPnP--bjZcQPVHxPC53_4RaU5Kw4DlMm0Ev0MNUxBugFTXGPac7RxTkng7DdtTyAFf');">
+<div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+</div>
+<!-- Item 2: Inner Layer -->
+<div class="h-32 bg-cover bg-center rounded-lg" data-alt="Clean white cotton t-shirt flat lay" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLFqSo07ygamNal71QOZT8k2TtE675eJ6CHB6ahGnFYAkHJHti8WJg-63PkIoLL5IAYhZo46fmSLF4IAQmEf0m9vZMbNergpjUgOfGpGWTVifPd9A34m4YJe-2IlWXGv3CSw-ofMh13BUxluca8CE7IN3jYW9ZtgoroWjnmvGw1cG5nQgvfAxNXemL77apImDEP6fRT_ZX8olqgyk2GJ9KDXBSoKtd3zu_KAi1el4_lnh2wFkioVq82VDzvzzSb4QTB39DAs1WK3TZ');"></div>
+<!-- Item 3: Bottoms -->
+<div class="h-32 bg-cover bg-center rounded-lg" data-alt="Blue denim jeans folded neatly" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC9t5yF4YyreOf429VCjMPMZadB7p_bWf9bv7SHpJc3Nh8AnCYO8fJpgC7tcvTMG3H3eXn80ehUmu5INYgVFkjWEYpuTLf1k2kcjiK5HCR3dh7zHJEBDJZWKCGf6-TGJqtIIdsRkTVk7PU4PYPKoFwOO8tiH11wcBbdLU3unm-0RrCfa_DIzeHzlFK8fjwxQ_gKptTGglZugBuXokju9DDlHalx66T4e9R5qKREstIsBiS5Cd1WrEe2qpvHeGI08DXkMIr0qgs-nr64');"></div>
+<!-- Item 4: Shoes/Accessory (Span 2 for balance at bottom of grid) -->
+<div class="col-span-2 h-24 bg-cover bg-center rounded-t-lg rounded-[2rem]" data-alt="White minimal leather sneakers side view" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDUGoIaaeLWsP_faNyGNrJoeNm1wKQjeyoB0-JpPWl72wUhH6rnS34lW7EDYJI9K2SgdwKRybBkI9SUd5pa2I6Bt66GFbG3AewdH1n7iIEveKkKQyGPoYoAD87OFYTEMKlxbPWGJyo7Ulh9p1Pz-4gRBCu3B2aTywjgeAh3_7v6hWpJGxD1oifIGksPWNrVdIsiaa-zHMNqlG7n8gCiEuY6ITU1eX1v8_lj4WAp-Eik6haruhMPln8YiIeHW4yWjfF0Tu3W_hIbCfYX');"></div>
+</div>
+<!-- Card Content Overlay/Footer -->
+<div class="px-6 py-6 pb-8 bg-surface-light dark:bg-surface-dark z-10 relative">
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-background-light dark:bg-gray-700 text-slate-700 dark:text-slate-200 text-xs font-bold uppercase tracking-wider">
+                            Clean Casual
+                        </span>
+<!-- Subtle indicator for "Today's Pick" -->
+<span class="flex h-2 w-2 rounded-full bg-primary"></span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-relaxed">
+                            easy, balanced, works today
+                        </p>
+</div>
+</div>
+<!-- Gradient Overlay for depth -->
+<div class="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-black/5 dark:to-black/40 rounded-[2.5rem]"></div>
+</div>
+<!-- Spacer for bottom dock -->
+<div class="h-8 shrink-0"></div>
+</main>
+<!-- Floating Action Dock -->
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-50">
+<div class="flex items-center gap-4 p-2 bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/20 dark:border-gray-700 rounded-full">
+<!-- New Vibe (Refresh) -->
+<button class="group flex flex-col items-center justify-center h-14 w-14 rounded-full bg-transparent hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors group-active:scale-90" style="font-size: 28px;">autorenew</span>
+</button>
+<!-- Love It (Primary Action) -->
+<button class="group flex items-center justify-center h-16 w-16 rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:scale-105 active:scale-95 transition-all duration-300">
+<span class="material-symbols-outlined text-white fill-current" style="font-size: 32px; font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<!-- Save (Bookmark) -->
+<button class="group flex flex-col items-center justify-center h-14 w-14 rounded-full bg-transparent hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 group-hover:text-slate-900 dark:group-hover:text-white transition-colors group-active:scale-90" style="font-size: 28px;">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

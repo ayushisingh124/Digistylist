@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digidrobe Onboarding</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#70df20",
+                        "background-light": "#f7f8f6",
+                        "background-dark": "#182111",
+                        "text-main": "#131b0e",
+                        "text-subtle": "#5c6b53",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-main dark:text-white antialiased transition-colors duration-200">
+<div class="relative flex h-screen w-full flex-col justify-between overflow-hidden group/design-root">
+<!-- Abstract Background Blobs -->
+<div class="absolute -top-[20%] -right-[20%] w-[600px] h-[600px] bg-primary/10 dark:bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-[10%] -left-[10%] w-[400px] h-[400px] bg-green-200/20 dark:bg-green-900/10 rounded-full blur-[80px] pointer-events-none"></div>
+<!-- Header / Progress Area -->
+<div class="z-10 flex w-full flex-col items-center justify-center pt-8 pb-4">
+<!-- Logo Mark (Minimal) -->
+<div class="mb-6 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-text-main dark:text-white">checkroom</span>
+</div>
+<!-- Page Indicators -->
+<div class="flex flex-row items-center justify-center gap-2">
+<div class="h-1.5 w-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-gray-300 dark:bg-gray-700"></div>
+<div class="h-1.5 w-8 rounded-full bg-primary"></div>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="z-10 flex flex-1 flex-col items-center justify-center px-6 @container">
+<!-- Hero Visual Card -->
+<div class="relative w-full max-w-sm aspect-[4/5] mb-8 animate-[float_6s_ease-in-out_infinite]">
+<div class="absolute inset-0 bg-white dark:bg-white/5 rounded-[2.5rem] shadow-xl shadow-black/5 dark:shadow-black/20 overflow-hidden transform rotate-[-2deg] transition-transform">
+<div class="w-full h-full bg-center bg-cover" data-alt="Minimalist flat lay outfit with baggy denim jeans and chunky sneakers" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBKdo--K3qTRBUxu2Xx9wk9cFfMiuPBObvNqPXOovrAPENumASdJBNRKVJFRvmkYeKpADQ3mQ2oCgE2V4LxVeEKk5EexSwVtdRL_DmPL0SCscBkbo-wn_M2nNSzEdxTBXX6fURmVYfgKB1h8N8nJ3k2RmNRDBSerXkfQycOhL-aAYtTGeFUj-zKNGhdfDNMxOlxfHilOFuZrfidm3W95rwWqgPsvBUbD4saXMl9vREJh9atyYTe5Ee-ZTM5DCd_g6RYyfHlH5jVEQJZ");'>
+</div>
+<!-- Overlay Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-20"></div>
+</div>
+<!-- Floating Badge/Tag -->
+<div class="absolute -right-4 top-12 rotate-[5deg] bg-white dark:bg-gray-800 px-4 py-2 rounded-full shadow-lg border border-gray-100 dark:border-gray-700 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">auto_awesome</span>
+<span class="text-xs font-bold text-text-main dark:text-white">New Mix</span>
+</div>
+</div>
+<!-- Headline -->
+<div class="flex flex-col items-center text-center space-y-2 max-w-xs">
+<h1 class="text-text-main dark:text-white tracking-tight text-[40px] font-extrabold leading-[0.95] lowercase">
+                    one outfit.<br/>every day.
+                </h1>
+<p class="text-text-subtle dark:text-gray-400 text-sm font-medium pt-2 max-w-[200px] leading-relaxed">
+                    Look good without the morning chaos.
+                </p>
+</div>
+</div>
+<!-- Footer / CTA -->
+<div class="z-10 w-full px-6 pb-10 pt-4 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark">
+<button class="group relative flex w-full max-w-md mx-auto h-14 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-primary text-[#131b0e] shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-[1.02] active:scale-95">
+<span class="absolute inset-0 bg-white/20 opacity-0 transition-opacity group-hover:opacity-100"></span>
+<span class="relative z-10 text-lg font-bold tracking-tight lowercase flex items-center gap-2">
+                    start styling
+                    <span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</span>
+</button>
+</div>
+</div>
+</body></html>

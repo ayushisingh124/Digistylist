@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digidrobe - Outfit History</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "1.5rem", 
+                        "xl": "2rem", 
+                        "2xl": "2.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary/30">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- Sticky Header -->
+<div class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-6 py-4 flex items-center justify-between transition-colors duration-300">
+<button class="flex size-10 items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors group">
+<span class="material-symbols-outlined text-slate-900 dark:text-white group-hover:-translate-x-0.5 transition-transform" style="font-size: 20px;">arrow_back_ios_new</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Fits History</h1>
+<button class="flex size-10 items-center justify-center rounded-full bg-transparent hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400" style="font-size: 24px;">tune</span>
+</button>
+</div>
+<!-- Filter Chips -->
+<div class="w-full overflow-x-auto no-scrollbar pb-2 pt-2 px-6 flex gap-3 snap-x">
+<button class="snap-start shrink-0 flex h-10 items-center justify-center rounded-full bg-slate-900 dark:bg-white px-6 shadow-sm transition-transform active:scale-95">
+<span class="text-white dark:text-slate-900 text-sm font-semibold">All</span>
+</button>
+<button class="snap-start shrink-0 flex h-10 items-center justify-center rounded-full bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 px-6 shadow-sm transition-transform active:scale-95">
+<span class="text-slate-600 dark:text-slate-300 text-sm font-medium">Worn</span>
+</button>
+<button class="snap-start shrink-0 flex h-10 items-center justify-center rounded-full bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 px-6 shadow-sm transition-transform active:scale-95">
+<span class="text-slate-600 dark:text-slate-300 text-sm font-medium">Saved</span>
+</button>
+<button class="snap-start shrink-0 flex h-10 items-center justify-center rounded-full bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 px-6 shadow-sm transition-transform active:scale-95">
+<span class="text-slate-600 dark:text-slate-300 text-sm font-medium">Skipped</span>
+</button>
+</div>
+<!-- Main Feed -->
+<div class="flex flex-col gap-8 p-6 pb-24">
+<!-- Card 1: Worn (Hero) -->
+<div class="group relative flex flex-col gap-4">
+<!-- Image Container -->
+<div class="relative w-full aspect-[4/5] overflow-hidden rounded-2xl shadow-sm">
+<div class="absolute top-4 left-4 z-10">
+<div class="flex items-center gap-2 bg-primary/90 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-lg ring-1 ring-white/20">
+<span class="material-symbols-outlined text-white" style="font-size: 16px;">check_circle</span>
+<span class="text-xs font-bold text-white uppercase tracking-wider">Worn</span>
+</div>
+</div>
+<img alt="Outfit preview" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern aesthetic outfit with sweater and jeans flatlay on light background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNz_VCndMsMws9isv8HJDc67dlwxF0N_7gob1CNONsP0544uOe0g8Ds8qreRrRu_tD_sjnKGjge7oK0TZ6aBhqr2aR1nYtbTpJbFzfltqOLAMo7Nos1vfb7KqbUsfBScPoT09gzR-_9ph0phnntAU7LvzgeL1mYPtxFoexSD4SZjtfdKPs2spUGNx2yh-8eADYmeKeOch7ycln4SmfUKVzkSRGsPvjkMvbuiGFEyszKSdTgEuSgZn8yf5yzV4Uw6DbT0ZjKrJGfgXy"/>
+<!-- Gradient Overlay for text readability if needed, kept subtle -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<!-- Content -->
+<div class="flex flex-col gap-1 px-1">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Yesterday</h3>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-base font-medium leading-relaxed">You looked cozy. This combo is a keeper.</p>
+</div>
+</div>
+<!-- Card 2: Skipped -->
+<div class="group relative flex flex-col gap-4">
+<div class="relative w-full aspect-[4/5] overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-800 shadow-sm">
+<div class="absolute top-4 left-4 z-10">
+<div class="flex items-center gap-2 bg-slate-200/80 dark:bg-slate-700/80 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-sm">
+<span class="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">Skipped</span>
+</div>
+</div>
+<img alt="Outfit preview" class="h-full w-full object-cover grayscale-[20%] transition-transform duration-700 group-hover:scale-105 group-hover:grayscale-0" data-alt="Elegant beige dress hanging on a rack soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGryZuNkkByTxP6cf1pyjPpRYnUjGihX5q7_FUBZukWvNrRpCHD8uQVBN2B8Uf6QQ4b5pAmxrBHX5CP41A9B45YNv4MNrfhbAtO3T6ZjUsBiNmYeZYII5-jmMaS6MQ_2YcCTk1Is-fUZzH_5zaTKQXRrmm63kQF5xY3ZTv48oTxcSeGhOIgfm0bK-5Hwacwr7MCBKed_3Z3m5aTQToh-UDd8nrh5cSIaHjx9qyIufKHL_fjVL1wXrUW38HKPLDW4H7rrvvmKLQ4pce"/>
+</div>
+<div class="flex flex-col gap-1 px-1">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Oct 22</h3>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-base font-medium leading-relaxed">Rain check? Let's try this one again soon.</p>
+</div>
+</div>
+<!-- Card 3: Saved -->
+<div class="group relative flex flex-col gap-4">
+<div class="relative w-full aspect-[4/5] overflow-hidden rounded-2xl shadow-sm">
+<div class="absolute top-4 left-4 z-10">
+<div class="flex items-center gap-2 bg-white/90 dark:bg-black/60 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-lg border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-primary" style="font-size: 16px;">bookmark</span>
+<span class="text-xs font-bold text-primary uppercase tracking-wider">Saved</span>
+</div>
+</div>
+<!-- Using a grid layout for 'collage' feel in this card -->
+<div class="grid h-full w-full grid-cols-2 grid-rows-2 gap-0.5 bg-white dark:bg-slate-800">
+<img alt="Top piece" class="h-full w-full object-cover row-span-2" data-alt="Detail shot of a black leather jacket texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEImTCwjCBQBrqr29paRYur-ll4iSXuyRAQsfyqboyH43Eg32ezJpEMRuECDJkYjzyD-ckjuvosQsymF1A_e_tdtBoJmr6snkyKQIJLWmcts8oTrN82KyleNFcgLwdwUKbN6qPKR2zUnmMLa4Hp5bmsecHrpyBGLlQHDFDqN8lL7lqpmf99s300P6gMYQbOSFzd7T3k7eeiy9hllbgfNIgpgu7pktOoeQk7Jp3CAHqbKsVbXf2p6R-Tf3kNTXm_PeLO-Ax5s9iV_Dk"/>
+<img alt="Shoes" class="h-full w-full object-cover" data-alt="High top blue canvas sneakers on concrete" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtcAUGntAQz2lbxNND_Q2tUOvbNxrk0UCqJkFT42kcNwcgv89Mm3ngGV5fR678JtAIDQwWY24w34L8yxRRsfEQBZjkJXjikLgXFwtW22qe2ZQzYyRAD5KO1M6SfOzYMfSEs8mj0oL0HN7Yy7SJk8L5qnRgzdeaEng26jSYE7nfBje8uCMf7qzrtk1xMD3weOkt9gejLSV2PkJPdjv3-as0YV718PsfUjfupXeRVUhWvjl71sfqAHntspbfVy4-3RTK0lciGWZ4ysdD"/>
+<img alt="Accessory" class="h-full w-full object-cover" data-alt="Patterned sunglasses on a simple background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHyUpXjBMKKFW-ozZl996AA5ES90ANbQvIfyUE_VoWxwvnVcOe5AO9VGZRY1fY83o353XV2xjKIPgeu8d-IEIfgEIqVWFaJBbgLf8IL8DPigZwY5B9mhHnFSl4SzRoUWib0TF9JfMP5oXiRnN_C2rMz3BLi_Xsm1FKuWAmQ_VHha3069j_EiJ7njMcBU1FrI5jOLoI-bDq8H9TVuiTvQl_42aCo2X1f555-TfRTcJzcZLZ6jBOWR-seUwLq4BK7I7Nny2yyYT0Ym2k"/>
+</div>
+</div>
+<div class="flex flex-col gap-1 px-1">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Friday Night</h3>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-base font-medium leading-relaxed">Saved for the weekend. Don't forget the accessories.</p>
+</div>
+</div>
+<!-- Card 4: Worn (Earlier) -->
+<div class="group relative flex flex-col gap-4">
+<div class="relative w-full aspect-[4/5] overflow-hidden rounded-2xl shadow-sm">
+<div class="absolute top-4 left-4 z-10">
+<div class="flex items-center gap-2 bg-primary/90 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-lg ring-1 ring-white/20">
+<span class="material-symbols-outlined text-white" style="font-size: 16px;">check_circle</span>
+<span class="text-xs font-bold text-white uppercase tracking-wider">Worn</span>
+</div>
+</div>
+<img alt="Outfit preview" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist street style outfit with beige tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASlELmkGceWcTIp0YGT7BAeu5YgSiP-Dgt27FMsD4YAj_XqclsBuLnCwcSpx7Q7ccsfju9VUHfEYb6NbdXyLGSQFHTUX1bYesAuagL3TcB7W33D6MbhLC-S0AZyCgf8pmFZq4nXnOROAMQcJYqiEYF5yIAY3eIrezVHbMYEIbx5e_sVVI4dGaw8246UTPySqt4M1idFbYjrd30ub_PNU45AcBGjhC7h8BbUH6jJUNbU-E0m82EcCuYWrjt-KF66XFIS0REDUYHR5CK"/>
+</div>
+<div class="flex flex-col gap-1 px-1">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Oct 18</h3>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-base font-medium leading-relaxed">Office chic. Simple and effective.</p>
+</div>
+</div>
+</div>
+<!-- Floating Action Button (Subtle) -->
+<div class="fixed bottom-6 right-6 z-50">
+<button class="flex size-14 items-center justify-center rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-xl shadow-slate-900/20 hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined" style="font-size: 28px;">add</span>
+</button>
+</div>
+</div>
+</body></html>

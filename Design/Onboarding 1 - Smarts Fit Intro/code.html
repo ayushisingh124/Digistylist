@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding - Digidrobe</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#70df20",
+                        "background-light": "#f7f8f6",
+                        "background-dark": "#182111",
+                        "text-dark": "#131b0e",
+                        "text-light": "#e4e8e1",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "2rem", 
+                        "xl": "3rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-dark dark:text-text-light transition-colors duration-300 min-h-screen flex flex-col justify-between overflow-x-hidden">
+<!-- Top Navigation -->
+<div class="relative w-full z-10">
+<div class="flex items-center justify-end p-6 pt-8 sm:pt-12">
+<button class="group flex items-center justify-center px-4 py-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-all">
+<span class="text-neutral-500 dark:text-neutral-400 text-sm font-bold tracking-wide group-hover:text-text-dark dark:group-hover:text-white">Skip</span>
+</button>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col justify-center w-full max-w-md mx-auto px-6 pb-4">
+<!-- Hero Visual: Asymmetric Grid Collage -->
+<div class="grid grid-cols-2 gap-3 mb-8 w-full aspect-[4/5] sm:aspect-square">
+<!-- Large Left Item: Core Outfit Piece -->
+<div class="relative row-span-2 col-span-1 bg-neutral-200 dark:bg-neutral-800 rounded-lg overflow-hidden group shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist beige oversized hoodie hanging cleanly against a neutral background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAUnlCuZiN-Zv5tkoKEK3bTs7eCUyMeKnSpJFAoRrKgOFe9VGOj0I6E-b0i2auA1zJ9Nj8QLavJJeEPRBVuPl4hoau1BoMwsr3s0IjUrqrOXP8QaGDmu0qqM2dvLh2k4Tx-gUQ3G397Z6Amv0AqB0iQQqnO-cwbI6Nlxxeb95B0AvPDSi_ABHDtBTBga8ZhIHBWyWQPTdHbmYGX-cc1fRPx8uZjid-whBPIFISAVU09cSooOk1oM1bSQHH6XhJ9kM5s2EDxYc72jJbr");'>
+</div>
+<!-- Subtle Gradient Overlay for depth -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<!-- Top Right Item: Accessory -->
+<div class="relative bg-neutral-100 dark:bg-neutral-800 rounded-lg overflow-hidden aspect-square group shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Close up of white leather sneakers on concrete floor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC-v6-CSP8shiOpl2hAPJCBO6EnkWPHDe6dRuEfT6tZb_F6QUdE3ygwMMS7sAUZdwz7fZsODTd724xu8tG_cUDix4Sbi3V0V8T-JL36-3WcnH6775Zayecwrv-w1F0mu0jhcshT0ZNz4xCA_HVYhLYILpyYwaW1Bg0kSX-S-U_MkDzFKsRozMp5zhym8UMtQH1ik7dp3A23yuSpciJI2Y89hAJHFx1idLjuhduT1FeoNTLPGd2WMkq-tS41BkbtmUUR4Ee8buShXqHf");'>
+</div>
+</div>
+<!-- Bottom Right Item: Texture/Detail -->
+<div class="relative bg-neutral-300 dark:bg-neutral-700 rounded-lg overflow-hidden aspect-square group shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Texture of light blue denim fabric folded neatly" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRBCHQP35VQpXwCOeOtBnuy1zoSqQZg8-aznetNuxI2tr2-NKwWpON-8wK4kSumqrB0NeZ3wahrAlV1LvHrNIndAdI7a_LWkPd7IO5xdxpwdkMQ-XAhxO9nz-n6Q5Tw3gZBpZjtM7uU6Ur1bAJDhQFhBlNGVukxOk11HxKqsByRo82AfSyPCt5aYvrBG46KMgrdO0ewzvL3HQ3uZAELNAm0OniKDH-O_3ZpMaIFqVAu6q2WtAQbVmPXJq5G134kAyKwq5i9WWiuxfR");'>
+</div>
+<!-- Interactive Icon overlay suggesting "Remix" -->
+<div class="absolute inset-0 flex items-center justify-center bg-black/10 backdrop-blur-[1px]">
+<span class="material-symbols-outlined text-white text-3xl drop-shadow-md">autorenew</span>
+</div>
+</div>
+</div>
+<!-- Typography Section -->
+<div class="flex flex-col items-center text-center space-y-3 mb-6">
+<h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight leading-[1.1] text-text-dark dark:text-white px-2">
+                We remix what you already own.
+            </h1>
+<p class="text-neutral-500 dark:text-neutral-400 text-base sm:text-lg font-medium leading-relaxed max-w-[280px]">
+                Fresh combos daily. Zero shopping required.
+            </p>
+</div>
+<!-- Pagination Indicators -->
+<div class="flex w-full flex-row items-center justify-center gap-2 py-4">
+<div class="h-2 w-8 rounded-full bg-primary transition-all duration-300 shadow-[0_0_10px_rgba(112,223,32,0.4)]"></div>
+<div class="h-2 w-2 rounded-full bg-neutral-300 dark:bg-neutral-700"></div>
+<div class="h-2 w-2 rounded-full bg-neutral-300 dark:bg-neutral-700"></div>
+</div>
+</div>
+<!-- Bottom Action Area -->
+<div class="w-full px-6 pb-8 pt-2 max-w-md mx-auto">
+<button class="relative w-full group overflow-hidden bg-primary rounded-full py-4 px-6 transition-transform active:scale-[0.98]">
+<span class="relative z-10 flex items-center justify-center gap-2 text-background-dark font-extrabold text-lg tracking-wide">
+                Let's Dress
+                <span class="material-symbols-outlined text-[20px] stroke-2">arrow_forward</span>
+</span>
+<!-- Subtle hover effect overlay -->
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out rounded-full"></div>
+</button>
+</div>
+</body></html>

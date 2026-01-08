@@ -1,0 +1,25 @@
+# Digidrobe Backend Dependencies
+# CPU-only AI processing
+
+# Web Framework
+flask==3.0.0
+flask-cors==4.0.0
+
+# Database
+flask-sqlalchemy==3.1.1
+
+# Image Processing
+pillow==10.2.0
+opencv-python-headless==4.9.0.80
+rembg==2.0.50
+
+# ML (CPU-only)
+torch==2.2.0
+torchvision==0.17.0
+
+# Color Processing
+scikit-learn==1.4.0
+webcolors==1.13
+
+# Utilities
+python-dotenv==1.0.0

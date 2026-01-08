@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digidrobe - You</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#308ce8",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2633",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom hide scrollbar for clean look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 font-display antialiased transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- Top Status Bar Simulation (Spacer) -->
+<div class="h-12 w-full"></div>
+<!-- Profile Header -->
+<div class="flex flex-col items-center p-6 pb-2">
+<div class="relative mb-4 group cursor-pointer">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32 ring-4 ring-white dark:ring-surface-dark shadow-lg transition-transform transform group-hover:scale-105" data-alt="Abstract artistic portrait with soft blue and pink gradients representing a calm vibe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBdDaS6MOlFhhaBAtn5TDWo4G2FFaOP6pbJ5Ype1Sxc2LMiiMd6Ng2bRoRKZ7qNBlhVlfPevB7HJpLMJMmWzKEZTrM5H_F3033usaifb223bpScZsWxbr8-m7BsRpT_n9IL4Lund4Z7AYUgyTltvtcJzGyQILz1Tt_xc6TM43ushidQRj_osJ8oKLLK6hdTlr9dlLPsGPWcZzIaK9QSBr3Y6QiSqZXeOEzc7FUZARsxUiXXOFnxXcBkevdYFtOkZFOFSygBMoyyzsQU");'>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary text-white rounded-full p-1.5 shadow-md flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center text-center gap-1">
+<h1 class="text-gray-900 dark:text-white text-2xl font-bold tracking-tight">Alex D.</h1>
+<p class="text-primary/80 dark:text-primary/70 text-base font-medium tracking-wide">Make it feel like you</p>
+</div>
+</div>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto pb-24 no-scrollbar">
+<!-- Vibe Section -->
+<div class="flex flex-col px-6 pt-6">
+<h2 class="text-gray-900 dark:text-gray-100 text-lg font-bold leading-tight tracking-tight mb-3">Current Vibe</h2>
+<div class="flex p-1.5 bg-gray-200/50 dark:bg-surface-dark rounded-2xl">
+<!-- Segmented Control Logic -->
+<div class="grid grid-cols-3 gap-1 w-full relative">
+<!-- Option 1 -->
+<label class="cursor-pointer relative z-10">
+<input class="peer sr-only" name="vibe" type="radio" value="chill"/>
+<div class="flex flex-col items-center justify-center py-3 rounded-xl transition-all duration-300 peer-checked:bg-white dark:peer-checked:bg-gray-700 peer-checked:shadow-sm peer-checked:text-primary text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200">
+<span class="text-xl mb-1 filter grayscale peer-checked:grayscale-0">☁️</span>
+<span class="text-xs font-semibold">Chill</span>
+</div>
+</label>
+<!-- Option 2 -->
+<label class="cursor-pointer relative z-10">
+<input checked="" class="peer sr-only" name="vibe" type="radio" value="clean"/>
+<div class="flex flex-col items-center justify-center py-3 rounded-xl transition-all duration-300 peer-checked:bg-white dark:peer-checked:bg-gray-700 peer-checked:shadow-sm peer-checked:text-primary text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200">
+<span class="text-xl mb-1 filter grayscale peer-checked:grayscale-0">✨</span>
+<span class="text-xs font-semibold">Clean</span>
+</div>
+</label>
+<!-- Option 3 -->
+<label class="cursor-pointer relative z-10">
+<input class="peer sr-only" name="vibe" type="radio" value="smart"/>
+<div class="flex flex-col items-center justify-center py-3 rounded-xl transition-all duration-300 peer-checked:bg-white dark:peer-checked:bg-gray-700 peer-checked:shadow-sm peer-checked:text-primary text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200">
+<span class="text-xl mb-1 filter grayscale peer-checked:grayscale-0">👔</span>
+<span class="text-xs font-semibold">Smart</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Preferences Section -->
+<div class="flex flex-col px-6 pt-8">
+<h2 class="text-gray-900 dark:text-gray-100 text-lg font-bold leading-tight tracking-tight mb-3">Preferences</h2>
+<div class="flex flex-col gap-3">
+<!-- Preference Item 1 -->
+<div class="flex items-center justify-between p-4 rounded-2xl bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-500">
+<span class="material-symbols-outlined">partly_cloudy_day</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-gray-900 dark:text-gray-100">Weather-based fits</span>
+<span class="text-xs text-gray-500 dark:text-gray-400">Match outfit to local forecast</span>
+</div>
+</div>
+<label class="relative flex h-7 w-12 cursor-pointer items-center rounded-full bg-gray-200 dark:bg-gray-700 p-1 transition-colors has-[:checked]:bg-primary">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="h-5 w-5 rounded-full bg-white shadow-sm transition-transform peer-checked:translate-x-5"></div>
+</label>
+</div>
+<!-- Preference Item 2 -->
+<div class="flex items-center justify-between p-4 rounded-2xl bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-purple-50 dark:bg-purple-900/20 text-purple-500">
+<span class="material-symbols-outlined">notifications_active</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-gray-900 dark:text-gray-100">Daily Inspo</span>
+<span class="text-xs text-gray-500 dark:text-gray-400">Morning outfit notifications</span>
+</div>
+</div>
+<label class="relative flex h-7 w-12 cursor-pointer items-center rounded-full bg-gray-200 dark:bg-gray-700 p-1 transition-colors has-[:checked]:bg-primary">
+<input class="peer sr-only" type="checkbox"/>
+<div class="h-5 w-5 rounded-full bg-white shadow-sm transition-transform peer-checked:translate-x-5"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="mt-8 mb-4 flex flex-col items-center gap-4 px-6">
+<button class="w-full py-4 rounded-2xl border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 font-medium text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined text-[20px] group-hover:text-red-500 transition-colors">restart_alt</span>
+<span class="group-hover:text-red-500 transition-colors">Reset Closet</span>
+</button>
+<span class="text-[10px] text-gray-300 dark:text-gray-600 font-mono">Digidrobe v1.0.4</span>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="absolute bottom-0 w-full bg-surface-light dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 pb-5 pt-2 px-6 shadow-[0_-5px_20px_rgba(0,0,0,0.03)] dark:shadow-none z-50">
+<div class="flex justify-between items-center">
+<button class="flex flex-col items-center gap-1 p-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+<span class="material-symbols-outlined text-[26px]">checkroom</span>
+<span class="text-[10px] font-medium">Closet</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+<span class="material-symbols-outlined text-[26px]">style</span>
+<span class="text-[10px] font-medium">Feed</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-primary">
+<span class="material-symbols-outlined text-[26px] fill-current" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-[10px] font-medium">You</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

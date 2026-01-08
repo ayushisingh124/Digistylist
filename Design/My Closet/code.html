@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digidrobe - My Closet</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#70df20",
+                        "primary-dark": "#5bc215",
+                        "background-light": "#f7f8f6",
+                        "background-dark": "#182111",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#222c1b",
+                        "text-main": "#131b0e",
+                        "text-subtle": "#6d9550",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "1.5rem", 
+                        "xl": "2rem", 
+                        "2xl": "2.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "soft": "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display transition-colors duration-300 antialiased min-h-screen relative pb-24">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md transition-colors duration-300">
+<h1 class="text-2xl font-extrabold tracking-tight lowercase">my closet</h1>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[28px]" data-icon="search">search</span>
+</button>
+</header>
+<!-- Filter Chips -->
+<div class="sticky top-[72px] z-40 w-full overflow-hidden pb-4 bg-gradient-to-b from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark pt-1">
+<div class="flex gap-3 overflow-x-auto px-6 no-scrollbar snap-x">
+<!-- Active Chip -->
+<button class="snap-start shrink-0 h-10 px-6 rounded-full bg-primary text-[#131b0e] font-bold text-sm tracking-wide shadow-sm hover:brightness-105 transition-all">
+                all
+            </button>
+<!-- Inactive Chips -->
+<button class="snap-start shrink-0 h-10 px-6 rounded-full bg-white dark:bg-surface-dark border border-transparent dark:border-white/5 text-gray-600 dark:text-gray-300 font-medium text-sm tracking-wide shadow-sm hover:bg-gray-50 dark:hover:bg-white/5 transition-all">
+                tops
+            </button>
+<button class="snap-start shrink-0 h-10 px-6 rounded-full bg-white dark:bg-surface-dark border border-transparent dark:border-white/5 text-gray-600 dark:text-gray-300 font-medium text-sm tracking-wide shadow-sm hover:bg-gray-50 dark:hover:bg-white/5 transition-all">
+                bottoms
+            </button>
+<button class="snap-start shrink-0 h-10 px-6 rounded-full bg-white dark:bg-surface-dark border border-transparent dark:border-white/5 text-gray-600 dark:text-gray-300 font-medium text-sm tracking-wide shadow-sm hover:bg-gray-50 dark:hover:bg-white/5 transition-all">
+                layers
+            </button>
+<button class="snap-start shrink-0 h-10 px-6 rounded-full bg-white dark:bg-surface-dark border border-transparent dark:border-white/5 text-gray-600 dark:text-gray-300 font-medium text-sm tracking-wide shadow-sm hover:bg-gray-50 dark:hover:bg-white/5 transition-all">
+                shoes
+            </button>
+<button class="snap-start shrink-0 h-10 px-6 rounded-full bg-white dark:bg-surface-dark border border-transparent dark:border-white/5 text-gray-600 dark:text-gray-300 font-medium text-sm tracking-wide shadow-sm hover:bg-gray-50 dark:hover:bg-white/5 transition-all">
+                accs
+            </button>
+</div>
+</div>
+<!-- Main Content: Masonry Grid -->
+<main class="px-5">
+<div class="grid grid-cols-2 gap-x-4 gap-y-8 pb-32">
+<!-- Item 1 -->
+<div class="group cursor-pointer flex flex-col gap-3">
+<div class="relative w-full aspect-[3/4] overflow-hidden rounded-2xl bg-white dark:bg-surface-dark shadow-soft">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="white cotton t-shirt on hanger" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBAGmnPeD9IHihzzMZ4FkTQaf85CybzI5VygnHFRCCcllGSOo4UKMP0OvtOcBSyO7ys9tw4bH6UU6xALlYkHCe9SONZMCbYeAPkMsiVrm5UIM-DLoN4pmpIq4cnwsqNmXu__rma7ZLjzRYCfVYx4HkWRuoYNkx3oI9508kl0ie-OhMRn0Q-7teKaNsS0eB9kpxW0-pj-A6BMA5qXgNyILLXzcgzWIKTguP3fBaJ2AUdhqMCIcJ7jq7mP75-kUu9ebQrqu1Msum90OGj');"></div>
+<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-text-main dark:text-white text-[15px] font-bold leading-tight lowercase">white tee</h3>
+<p class="text-text-subtle dark:text-gray-400 text-xs font-medium mt-0.5 lowercase">basic essential</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group cursor-pointer flex flex-col gap-3">
+<div class="relative w-full aspect-[3/4] overflow-hidden rounded-2xl bg-white dark:bg-surface-dark shadow-soft">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="blue denim vintage jeans folded" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzXQYELO3wZis01L1p2batlScqB-ay2YgXP_QfsEIxYKBC2vxjV9xGB_zQOsa7IDny2Gvh8lxC9Ic0Jt4uOQ1IdPLpSIeFI3f-1iS0vk7l8H5qI8bOFINzqeYYVkKWuEXnLsUbh7-JLuMheaK7mcXQIV2k4EGgMU03yBDK_9jJijjaouABb5IX6zKLlnk7EM2jXfkVvdv-pFSFmXAee4W-OeLRHQ_-VmYhJnqHjhtgnTQYIaVFRXdzpiPFhWT6NT1DTAXXr3kmOBCO');"></div>
+</div>
+<div>
+<h3 class="text-text-main dark:text-white text-[15px] font-bold leading-tight lowercase">blue denim</h3>
+<p class="text-text-subtle dark:text-gray-400 text-xs font-medium mt-0.5 lowercase">vintage wash</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group cursor-pointer flex flex-col gap-3">
+<div class="relative w-full aspect-[3/4] overflow-hidden rounded-2xl bg-white dark:bg-surface-dark shadow-soft">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="black oversized hoodie on grey background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB4EYlX2Z4w2zin_QJeVJFCefoOGDYjsaLqaHEVIwa6pWvMw3eVZQWZqwZpoudy1NeMvgysY4l4s_0WYL9dXyHZZ6c2IOf-xnvleDOq6wB8FlQgJA7BRWdEwh-ONp2tn0vDdHEX7wUd3nwJjrQlXhdWbevj5ftWFcefqvZYyvIejXVvE3OIHhfsK7NgrtX4TkKV6isMa_nFAmzd3s41PWtvzOqs_5DEfEa-gDt_1IyG9SU4uFjDZFH4VWOLT25ln-MbCGF2TjEOPZQX');"></div>
+</div>
+<div>
+<h3 class="text-text-main dark:text-white text-[15px] font-bold leading-tight lowercase">black hoodie</h3>
+<p class="text-text-subtle dark:text-gray-400 text-xs font-medium mt-0.5 lowercase">oversized fit</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="group cursor-pointer flex flex-col gap-3">
+<div class="relative w-full aspect-[3/4] overflow-hidden rounded-2xl bg-white dark:bg-surface-dark shadow-soft">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="cream beige puffer jacket" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYIghKdBkpLR6GBXausAOCzG1F4TbaxFbFg3v0Xtun_tCjVISf4cUBx-tkStPw1_ibesylfbATzxgIrxfchNc1Eb8_R-YYu0tStQi-7nx906LrinAoq3z6FZQlOdkFURs4uDgRoLFtA7cDV89DU2dIUvS-rf4-C2OHEfLWTpMY5KDHlkd_zn_Q4ptrx4l3TTNJRgPa45lmbggmBQUpyBiNEfolP4BfXdSlxsgMMjnnjvD0u3kd2nucOhu8sTAU4-JkUNlwyutKMV-w');"></div>
+</div>
+<div>
+<h3 class="text-text-main dark:text-white text-[15px] font-bold leading-tight lowercase">puffer jacket</h3>
+<p class="text-text-subtle dark:text-gray-400 text-xs font-medium mt-0.5 lowercase">winter layer</p>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="group cursor-pointer flex flex-col gap-3">
+<div class="relative w-full aspect-[3/4] overflow-hidden rounded-2xl bg-white dark:bg-surface-dark shadow-soft">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="pair of colorful retro sneakers" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDVYbg0ur1Pi5qrCoMV1aStvFXz43Pq_RZoEUwOb5S6BTfCJPJ_YDdvmI_6NJF3f6Uk-brkCVSyO6TjhVasOLGANijyhbvW4OOBTdCmFwPXv3_VnpSnz0i9-vk8V0cVfZHnTDen7tkfM7omzw40UGMmJjDlpfTuv9D8g5QgZnzIK1_sth1sv4EwTvwVHcCyFRSvOMy_tlpD5vtV5fwa1nq5ELwyxmtr9Uz_qUKrvTml_ZPt9oyFTeeqBoJu5f9Nh_91Ll6Ho37ZuecM');"></div>
+</div>
+<div>
+<h3 class="text-text-main dark:text-white text-[15px] font-bold leading-tight lowercase">new balance</h3>
+<p class="text-text-subtle dark:text-gray-400 text-xs font-medium mt-0.5 lowercase">daily driver</p>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="group cursor-pointer flex flex-col gap-3">
+<div class="relative w-full aspect-[3/4] overflow-hidden rounded-2xl bg-white dark:bg-surface-dark shadow-soft">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="white linen button down shirt" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZbuBTyH-fww3z7BrQU6xgjAGcrBgv1JGVYQBTbVii7s8q0wK8gRpDHhzBcwcVW4S7yZuROeLC-ugA_J6CxCYzyCsyclrugJZ0YeHsXgvWI6u2ZxvjF7gG1naoWHxVdE7rHVkJ2wSzNwtF-CyIB1Qp0DQ5gpKSV4k3uPPP0uVonVnf9xvJ763NasvGm-wl4pZgaWbqfFgkV2i1bU4aUUf-QKcjosd883inss_SrQh4Gy0NCxRTD1JHSC4obB0hzdLLyI2eTG_KCMao');"></div>
+</div>
+<div>
+<h3 class="text-text-main dark:text-white text-[15px] font-bold leading-tight lowercase">linen shirt</h3>
+<p class="text-text-subtle dark:text-gray-400 text-xs font-medium mt-0.5 lowercase">summer breeze</p>
+</div>
+</div>
+<!-- Item 7 -->
+<div class="group cursor-pointer flex flex-col gap-3">
+<div class="relative w-full aspect-[3/4] overflow-hidden rounded-2xl bg-white dark:bg-surface-dark shadow-soft">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="silver chain necklace on white background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuATHx75d4sCH1Ss4O8LX0Z7lIjVT94vIgIAIDlMpSGsLMzwQ6NYX0YjX8ey08uzr8Y3KRt2bFlez9NrE9GXhcm50PjhreSJNDs0WSJC1ixP2hs1xfKOMjt-7rqxGyiZ3hfxoiyeb-wH0BxU8nemYP9R2kAEGdAX02-QaLxCzRkW4YNzC4PWtzmo-ojJnkuvsSyTW6UeGvGlkstbfkPQYTefVGgYM_IVIOpXkv0ZcGt8EVCyXcWcq30zO_eNdpC-o_udCpFaALJOWAIG');"></div>
+</div>
+<div>
+<h3 class="text-text-main dark:text-white text-[15px] font-bold leading-tight lowercase">silver chain</h3>
+<p class="text-text-subtle dark:text-gray-400 text-xs font-medium mt-0.5 lowercase">accessory</p>
+</div>
+</div>
+<!-- Item 8 -->
+<div class="group cursor-pointer flex flex-col gap-3">
+<div class="relative w-full aspect-[3/4] overflow-hidden rounded-2xl bg-white dark:bg-surface-dark shadow-soft">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="grey wool coat hanging" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDC_I4P7jeLkdQfeeu_45LkgjbVFejNvtVSoJDlhYcWHqDfYd3nw6JTGS-ySzW8CMZYgj_DSjVxlamlfxirVh-CJZk3V4npdudDoOjMXovlqR28-pAI55PwM8sxfrVRQRMTgbklZ9v_cnLNo4wAdb7SBSrAp-kBcXJ1SVxseJZF2EOFJO2Cz1FrwaShA1TSCGk1TQS7kJ7QFFK3JDjQmWA11DUqzFs-FdVU1cmhuSoJOBMB71QUWQC-ktQRyWujBAQE6ILk8k8kL3ZA');"></div>
+</div>
+<div>
+<h3 class="text-text-main dark:text-white text-[15px] font-bold leading-tight lowercase">wool coat</h3>
+<p class="text-text-subtle dark:text-gray-400 text-xs font-medium mt-0.5 lowercase">outerwear</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-24 right-5 z-50">
+<button class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-[#131b0e] shadow-lg shadow-primary/40 hover:scale-105 active:scale-95 transition-all duration-300">
+<span class="material-symbols-outlined text-[32px]" data-icon="add">add</span>
+</button>
+</div>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 w-full bg-white/80 dark:bg-[#182111]/90 backdrop-blur-lg border-t border-gray-100 dark:border-white/5 pb-6 pt-3 px-8 z-50">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<!-- Active Tab -->
+<a class="flex flex-col items-center gap-1 group w-16" href="#">
+<div class="relative p-1">
+<span class="material-symbols-outlined text-text-main dark:text-white text-[28px] font-variation-settings-fill" style="font-variation-settings: 'FILL' 1;">checkroom</span>
+<span class="absolute -top-0 right-0 w-2 h-2 bg-primary rounded-full"></span>
+</div>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex flex-col items-center gap-1 group w-16" href="#">
+<div class="relative p-1">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 group-hover:text-primary transition-colors text-[28px]">auto_awesome</span>
+</div>
+</a>
+<a class="flex flex-col items-center gap-1 group w-16" href="#">
+<div class="relative p-1">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 group-hover:text-primary transition-colors text-[28px]">account_circle</span>
+</div>
+</a>
+</div>
+</nav>
+<!-- Gradient Overlay at bottom for smooth fade behind nav -->
+<div class="fixed bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent pointer-events-none z-30"></div>
+</body></html>
