@@ -78,16 +78,17 @@ class ImageProcessor:
             return image
     
     def detect_category(self, image: Image.Image) -> str:
-        """Detect clothing category using MobileNetV2"""
+        """Detect clothing category using MobileNetV2 with ImageNet classes"""
         try:
             import torch
             from torchvision import models, transforms
             
             if self.classifier is None:
-                self.classifier = models.mobilenet_v2(pretrained=True)
+                # Load pretrained MobileNetV2
+                self.classifier = models.mobilenet_v2(weights=models.MobileNet_V2_Weights.IMAGENET1K_V1)
                 self.classifier.eval()
             
-            # Preprocess
+            # Preprocess image
             preprocess = transforms.Compose([
                 transforms.Resize(256),
                 transforms.CenterCrop(224),
@@ -103,26 +104,56 @@ class ImageProcessor:
             with torch.no_grad():
                 outputs = self.classifier(input_tensor)
             
-            # Map ImageNet classes to our categories
-            # This is a simplified mapping - production would use fine-tuned model
+            # Get top 5 predictions for better accuracy
             probabilities = torch.nn.functional.softmax(outputs[0], dim=0)
-            top_class = probabilities.argmax().item()
+            top5_probs, top5_indices = torch.topk(probabilities, 5)
             
-            # Simple heuristic based on ImageNet class ranges
-            # Clothing-related classes are roughly in 600-700 range
-            if top_class in range(600, 620):
-                return 'tops'
-            elif top_class in range(620, 640):
-                return 'bottoms'
-            elif top_class in range(640, 660):
-                return 'layers'
-            elif top_class in range(660, 680):
+            # ImageNet class mappings for clothing items
+            # Reference: https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a
+            IMAGENET_CLOTHING_CLASSES = {
+                # Tops
+                'tops': [610, 617, 834, 835, 836, 837, 858],  # jersey, kimono, suit, sundress, s-dress, t-shirt, trench
+                # Bottoms
+                'bottoms': [474, 568, 569, 614],  # jean, miniskirt, swimming trunks, diaper (baby bottoms)
+                # Shoes
+                'shoes': [514, 515, 516, 518, 519, 520, 521, 618, 629, 630, 770],  # loafer, sandal, shoe, sock, sneaker, boot types
+                # Layers (outerwear)
+                'layers': [822, 823, 824, 593, 654, 659],  # cardigan, coat, fur coat, cloak, military uniform, poncho
+                # Accessories
+                'accessories': [409, 517, 529, 530, 601, 602, 617, 623, 635, 638, 679, 785, 787, 806, 808],  # apron, bow tie, glasses, hat types, mask, scarf, tie, wallet, watch
+            }
+            
+            # Check top predictions against our categories
+            for prob, idx in zip(top5_probs, top5_indices):
+                class_id = idx.item()
+                
+                for category, class_ids in IMAGENET_CLOTHING_CLASSES.items():
+                    if class_id in class_ids:
+                        print(f"Detected category '{category}' with confidence {prob:.2%} (class {class_id})")
+                        return category
+            
+            # If no direct match, use expanded heuristics on top prediction
+            top_class = top5_indices[0].item()
+            confidence = top5_probs[0].item()
+            
+            print(f"No direct clothing match. Top class: {top_class}, confidence: {confidence:.2%}")
+            
+            # Fallback heuristics based on ImageNet structure
+            if 400 <= top_class <= 500:  # Accessories and small items range
+                return 'accessories'
+            elif 500 <= top_class <= 600:  # Footwear and lower body items
                 return 'shoes'
+            elif 600 <= top_class <= 700:  # Upper body clothing
+                return 'tops'
+            elif 800 <= top_class <= 900:  # Outerwear
+                return 'layers'
             else:
-                return 'tops'  # Default
+                return 'tops'  # Default to tops for unknown
                 
         except Exception as e:
             print(f"Category detection failed: {e}")
+            import traceback
+            traceback.print_exc()
             return 'tops'  # Default fallback
     
     def extract_colors(self, image: Image.Image, n_colors: int = 3) -> list:
