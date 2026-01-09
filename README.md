@@ -192,4 +192,4 @@ MIT
 
 ---
 
-Built with ☕ by [@rishabhpatre](https://github.com/rishabhpatre)
+Built with ☕ by Ayushi
