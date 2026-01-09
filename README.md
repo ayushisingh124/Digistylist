@@ -1,4 +1,4 @@
-# 👔 Digidrobe
+# 👔 DigiStylist
 
 **AI-Powered Digital Wardrobe & Outfit Recommendation System**
 
